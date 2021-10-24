@@ -61,25 +61,27 @@ function createCats(cats) {
 
     let catInfo = "";
 
-    for(let i = 0; i < cats[i].length; i++) {
+    for(let i = 0; i < cats.length; i++) {
         console.log(i, cats[i]);
 
-        let ageCheck = "Age unknown";
-
-        if(cats[i].age) {
-            ageCheck = cats[i].age; 
-        }
-        
         const catName = cats[i].name; 
         const catAge = cats[i].age; 
 
+        let ageOfPet = "Age unknown";
+
+        if(catAge) {
+            ageOfPet = catAge; 
+        }
+
         catInfo += `
-        <h5>${catName}</5>
-        <p>${catAge}</p>
+        <div>
+        <h5>${catName}</h5>
+        <p>${ageOfPet}</p>
+        </div>
         `;
     }
 
-    const catDiv = "<div>" + catInfo + "</div>";
+    const catDiv = catInfo;
 
     return catDiv;
 }
